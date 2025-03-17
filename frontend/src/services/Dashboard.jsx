@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import axios from 'axios';
-import Web3Modal from "web3modal";
 import { marketplaceAddress } from '../config';
 import NFTMarketplace from '../abi/NFTMarketplace.json';
 
@@ -15,9 +14,6 @@ const CreatorDashboard = () => {
 
   async function loadNFTs() {
     try {
-      const web3Modal = new Web3Modal({
-        cacheProvider: true,
-      });
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
