@@ -1,0 +1,9 @@
+type MarketItem @entity {
+    id: ID!
+    tokenId: BigInt!
+    seller: Bytes!
+    owner: Bytes!
+    price: BigInt!
+    sold: Boolean!
+    createdAt: BigInt!
+}

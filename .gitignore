@@ -1,0 +1,11 @@
+/node_modules/*
+/frontend/node_modules/*
+/ignition/deployments/*
+/artifacts/*
+/cache/*
+/package-lock.json
+/hardhat.config.js
+/backend/.env
+/backend/node_modules/*
+/build/*
+/generated/*
