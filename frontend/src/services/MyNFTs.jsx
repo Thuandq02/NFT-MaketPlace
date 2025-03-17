@@ -17,7 +17,7 @@ const MyNFTs = () => {
   async function loadNFTs() {
     try {
       const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const marketplaceContract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
       const data = await marketplaceContract.fetchMyNFTs();
 
@@ -25,11 +25,11 @@ const MyNFTs = () => {
         data.map(async (i) => {
           const tokenURI = await marketplaceContract.tokenURI(i.tokenId);
           const meta = await axios.get(tokenURI);
-          let price = ethers.utils.formatUnits(i.price.toString(), 'ether');
+          let price = ethers.formatUnits(i.price.toString(), 'ether');
 
           return {
             price,
-            tokenId: i.tokenId.toNumber(),
+            tokenId: i.tokenId,
             seller: i.seller,
             owner: i.owner,
             image: meta.data.image,

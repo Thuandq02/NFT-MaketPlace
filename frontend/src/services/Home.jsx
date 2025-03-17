@@ -43,11 +43,10 @@ const Home = () => {
   const buyNft = async (nft) => {
     try {
       const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
 
       const price = ethers.parseUnits(nft.price.toString(), 'ether');
-      console.log(nft);
       const transaction = await contract.createMarketSale(nft.tokenId, {
         value: price,
       });

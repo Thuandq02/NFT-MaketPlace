@@ -18,9 +18,8 @@ const CreatorDashboard = () => {
       const web3Modal = new Web3Modal({
         cacheProvider: true,
       });
-      const connection = await web3Modal.connect();
-      const provider = new ethers.BrowserProvider(connection);
-      const signer = provider.getSigner();
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
       const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
       const data = await contract.fetchItemsListed();
       const items = await Promise.all(
