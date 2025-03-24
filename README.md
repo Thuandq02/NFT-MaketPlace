@@ -11,9 +11,13 @@
 ipfs config --json API.HTTPHeaders 
 
   {
+  
     "Access-Control-Allow-Origin": ["*"],
+    
     "Access-Control-Allow-Methods": ["PUT", "POST", "GET"],
+    
     "Access-Control-Allow-Headers": ["Authorization", "Content-Type"]
+    
   }
 
 //create app ipfs
