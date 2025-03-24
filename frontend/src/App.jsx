@@ -5,7 +5,7 @@ import Home from './services/Home';
 import CreateNFT from './services/CreateNFT';
 import MyNFTs from './services/MyNFTs';
 import Dashboard from './services/Dashboard';
-import ResellNFT from './services/ResellNFT';
+import Sold from './services/Sold';
 import WalletConnect from "./services/WalletConnect";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Link to="/create-nft" className="mr-6 text-pink-500">Create NFT</Link>
         <Link to="/my-nfts" className="mr-6 text-pink-500">My NFTs</Link>
         <Link to="/dashboard" className="mr-6 text-pink-500">Dashboard</Link>
-        {/* <Link to="/resell-nft" className="mr-6 text-pink-500">Resell NFT</Link> */}
+        <Link to="/sold" className="mr-6 text-pink-500">Sold NFT</Link>
       </div>
       <WalletConnect />
     </nav>
@@ -27,7 +27,7 @@ function App() {
       <Route path="/create-nft" element={<CreateNFT />} />
       <Route path="/my-nfts" element={<MyNFTs />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      {/* <Route path="/resell-nft" element={<ResellNFT />} /> */}
+      <Route path="/sold" element={<Sold />} />
     </Routes>
   </div>
   );
