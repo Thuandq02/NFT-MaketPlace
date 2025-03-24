@@ -22,11 +22,11 @@ const CreatorDashboard = () => {
         data.map(async (i) => {
           const tokenUri = await contract.tokenURI(i.tokenId);
           const meta = await axios.get(tokenUri);
-          let price = ethers.utils.formatUnits(i.price.toString(), 'ether');
+          let price = ethers.formatUnits(i.price.toString(), 'ether');
 
           return {
             price,
-            tokenId: i.tokenId.toNumber(),
+            tokenId: i.tokenId,
             seller: i.seller,
             owner: i.owner,
             image: meta.data.image,

@@ -18,7 +18,7 @@ function App() {
         <Link to="/create-nft" className="mr-6 text-pink-500">Create NFT</Link>
         <Link to="/my-nfts" className="mr-6 text-pink-500">My NFTs</Link>
         <Link to="/dashboard" className="mr-6 text-pink-500">Dashboard</Link>
-        <Link to="/resell-nft" className="mr-6 text-pink-500">Resell NFT</Link>
+        {/* <Link to="/resell-nft" className="mr-6 text-pink-500">Resell NFT</Link> */}
       </div>
       <WalletConnect />
     </nav>
@@ -27,7 +27,7 @@ function App() {
       <Route path="/create-nft" element={<CreateNFT />} />
       <Route path="/my-nfts" element={<MyNFTs />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/resell-nft" element={<ResellNFT />} />
+      {/* <Route path="/resell-nft" element={<ResellNFT />} /> */}
     </Routes>
   </div>
   );
