@@ -1,4 +1,4 @@
-import { MarketItemCreated } from "../generated/NFTMarketplace/NFTMarketplace"
+import { MarketItemCreated, MarketItemUpdated } from "../generated/NFTMarketplace/NFTMarketplace"
 import { MarketItem } from "../generated/schema"
 
 export function handleMarketItemCreated(event: MarketItemCreated): void {
@@ -10,4 +10,15 @@ export function handleMarketItemCreated(event: MarketItemCreated): void {
   entity.sold = event.params.sold
   entity.createdAt = event.block.timestamp;
   entity.save()
+}
+
+export function handleMarketItemUpdated(event: MarketItemUpdated): void {
+  let token = MarketItem.load(event.params.tokenId.toString());
+  if (token) {
+    token.seller = event.params.seller;
+    token.owner = event.params.owner;
+    token.price = event.params.price;
+    token.sold = event.params.sold;
+    token.save();
+  }
 }

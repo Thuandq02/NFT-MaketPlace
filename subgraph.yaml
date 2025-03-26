@@ -22,6 +22,6 @@ dataSources:
       eventHandlers:
         - event: MarketItemCreated(indexed uint256,address,address,uint256,bool)
           handler: handleMarketItemCreated
-        # - event: MarketItemUpdated(indexed uint256,address,address,uint256,bool)
-        #   handler: handleMarketItemUpdated
+        - event: MarketItemUpdated(indexed uint256,address,address,uint256,bool)
+          handler: handleMarketItemUpdated
       file: ./src/mapping.ts
